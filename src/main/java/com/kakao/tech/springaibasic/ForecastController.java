@@ -1,6 +1,6 @@
 package com.kakao.tech.springaibasic;
 
-import org.springframework.ai.chat.ChatClient;
+import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.util.MimeTypeUtils;

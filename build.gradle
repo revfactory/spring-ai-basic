@@ -14,12 +14,6 @@ java {
 repositories {
     mavenCentral()
     maven {
-        url 'https://repo.spring.io/milestone'
-        content {
-            includeGroup 'org.springframework.ai'
-        }
-    }
-    maven {
         url 'https://repo.spring.io/snapshot'
         content {
             includeGroup 'org.springframework.ai'
@@ -40,6 +34,9 @@ dependencyManagement {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.ai:spring-ai-openai-spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    runtimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
