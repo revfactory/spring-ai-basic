@@ -27,4 +27,13 @@ public class ChatController {
                 .call()
                 .content();
     }
+
+    @GetMapping("/hello")
+    public String chatWithTemplate(@RequestParam(name = "name") String name) {
+        PromptTemplate promptTemplate = new PromptTemplate("안녕? 내 이름은 {name} 이야");
+        Prompt prompt = promptTemplate.create(Map.of("name", name));
+        return chatClient.prompt(prompt)
+                .call()
+                .content();
+    }
 }
